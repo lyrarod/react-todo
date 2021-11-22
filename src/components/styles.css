@@ -1,0 +1,104 @@
+.todoApp {
+  width: 480px;
+  height: 80vh;
+  padding: 3rem;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 8px 8px #0005;
+  overflow-y: auto;
+}
+
+.todoList .rowList {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.1s, box-shadow 0.1s, border 0.1s;
+}
+/* .todoList .rowList + .rowList {
+  border-top: 1px solid #0003;
+  box-shadow: 1px 1px 1px #0005;
+} */
+.todoList .rowList:nth-child(odd) {
+  background: #9991;
+}
+/* .todoList .rowList:nth-child(even) {
+  background: #fff;
+} */
+.todoList .rowList:hover {
+  /* border: 1px solid #111; */
+  box-shadow: 0 0 6px #0005;
+}
+.todoList .rowList .buttons {
+  display: flex;
+  margin-left: 8px;
+}
+.todoList .rowList .buttons svg {
+  font-size: 1.75em;
+}
+.todoList .rowList .buttons svg:hover:nth-child(1) {
+  color: #0fbcf9;
+  transform: scale(1.1);
+}
+.todoList .rowList .buttons svg:hover:nth-child(2) {
+  color: #f53b57;
+  transform: scale(1.1);
+}
+
+.todoList .rowList li {
+  width: 100%;
+  font-weight: 500;
+  text-align: justify;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#formTodoInput {
+  margin-bottom: 2rem;
+}
+#formTodoInput .inputTodo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #1d3557;
+  padding: 6px;
+  border-radius: 2px;
+}
+
+#formTodoInput .inputTodo input {
+  width: 100%;
+  background: transparent;
+  font-size: 1rem;
+}
+#formTodoInput .inputTodo input::placeholder {
+  color: #0003;
+}
+#formTodoInput .inputTodo button {
+  padding: 6px 12px;
+  margin-left: 8px;
+  border-radius: 2px;
+  color: whitesmoke;
+  background: #1e272e;
+  cursor: pointer;
+  transition: none;
+}
+#formTodoInput .inputTodo button:active {
+  transform: scale(0.98);
+}
+
+@media screen and (max-width: 499px) {
+  .todoApp {
+    width: 90vw;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  #formTodoInput {
+    margin-bottom: 1rem;
+  }
+  .todoList .rowList {
+    cursor: default;
+  }
+}
