@@ -1,11 +1,19 @@
-import { useState } from "react";
-import { data } from "./data";
+import { useEffect, useState } from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 import "./styles.css";
 
+const getTodos = () => {
+  const data = localStorage.getItem("todos");
+  return data ? JSON.parse(data) : [{ id: 1, text: "🚀 Hello world!" }];
+};
+
 const TodoApp = () => {
-  const [todos, setTodos] = useState(data);
+  const [todos, setTodos] = useState(getTodos());
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const confirmUpdateTodo = (todo, text) => {
     const newTodos = [...todos];
@@ -27,7 +35,7 @@ const TodoApp = () => {
     });
 
     setTodos(res);
-    console.log(res);
+    // console.log(res);
   };
 
   const cancelUpdateTodo = (todo) => {
@@ -47,7 +55,7 @@ const TodoApp = () => {
     });
 
     setTodos(res);
-    console.log(res);
+    // console.log(res);
   };
 
   const setUpdateTodo = (todo) => {
@@ -68,14 +76,14 @@ const TodoApp = () => {
     });
 
     setTodos(res);
-    console.log(res);
+    // console.log(res);
   };
 
   const deleteTodo = (todo) => {
     const newTodos = [...todos];
     const filterTodos = newTodos.filter((newTodo) => newTodo.id !== todo.id);
     setTodos(filterTodos);
-    console.log("DELETE:", todo);
+    // console.log("DELETE:", todo);
   };
 
   const createTodo = (todo) => {
@@ -87,7 +95,7 @@ const TodoApp = () => {
     const findTodo = newTodos.find((newTodo) => newTodo.id === todo.id);
     findTodo.isCompleted = !findTodo.isCompleted;
     setTodos(newTodos);
-    console.log("COMPLETED:", findTodo);
+    // console.log("COMPLETED:", findTodo);
   };
 
   return (

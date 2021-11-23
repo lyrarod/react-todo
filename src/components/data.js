@@ -1,4 +1,4 @@
-export const data = [
+export const fakeData = [
   { id: 1, text: "Hello World! 😀", isCompleted: false },
   { id: 2, text: "Olá Mundo! 👀", isCompleted: true },
   { id: 3, text: "ReactJS 😎", isCompleted: false },

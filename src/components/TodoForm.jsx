@@ -34,7 +34,7 @@ const TodoForm = (props) => {
           onChange={(e) => setValue(e.target.value)}
           ref={inputRef}
           required
-          autoFocus
+          // autoFocus
           placeholder="Type here..."
         />
         <button type="submit" children="add" />
