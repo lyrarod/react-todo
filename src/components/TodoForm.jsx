@@ -23,7 +23,7 @@ const TodoForm = (props) => {
 
     setValue("");
     inputRef.current.focus();
-    console.log("CREATE:", newTodo);
+    // console.log("CREATE:", newTodo);
   };
 
   return (
