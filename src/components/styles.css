@@ -101,4 +101,7 @@
   .todoList .rowList {
     cursor: default;
   }
+  .todoList .rowList:hover {
+    box-shadow: none;
+  }
 }
