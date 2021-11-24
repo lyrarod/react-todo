@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
+import { fakeData } from "./data";
 import "./styles.css";
 
 const getTodos = () => {
   const data = localStorage.getItem("todos");
-  return data ? JSON.parse(data) : [{ id: 1, text: "🚀 Hello world!" }];
+  return data ? JSON.parse(data) : fakeData;
 };
 
 const TodoApp = () => {
