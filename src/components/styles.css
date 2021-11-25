@@ -77,16 +77,17 @@
   color: #0003;
 }
 #formTodoInput .inputTodo button {
-  padding: 6px 12px;
+  display: flex;
   margin-left: 8px;
-  border-radius: 2px;
-  color: whitesmoke;
-  background: #1e272e;
+  background: transparent;
   cursor: pointer;
   transition: none;
 }
 #formTodoInput .inputTodo button:active {
   transform: scale(0.98);
+}
+#formTodoInput .inputTodo svg {
+  font-size: 2rem;
 }
 
 @media screen and (max-width: 499px) {

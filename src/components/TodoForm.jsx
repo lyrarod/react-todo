@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { AiFillPlusSquare } from "react-icons/ai";
 
 const TodoForm = (props) => {
   const [value, setValue] = useState("");
@@ -37,7 +38,10 @@ const TodoForm = (props) => {
           // autoFocus
           placeholder="Type here..."
         />
-        <button type="submit" children="add" />
+        <button
+          type="submit"
+          children={<AiFillPlusSquare title={"Add Task"} />}
+        />
       </div>
     </form>
   );
